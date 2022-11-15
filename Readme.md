@@ -1,0 +1,1 @@
+A simple and minimalist todo app using Vanilla JavaScript.
