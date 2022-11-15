@@ -207,6 +207,10 @@ input[type="checkbox"] {
 
 .hide {
     display: block;
+    cursor: pointer;
+}
+.hide p:hover {
+    color: #143f8dd0;
 }
 .last-div {
     width: 375px;
