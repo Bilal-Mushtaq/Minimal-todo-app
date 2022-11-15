@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(20, 19, 19, 0.945);
+}
+
+.main-container {
+    max-width: 375px;
+    margin: auto;
+    height: 100vh;
+    border: 5px solid #171717;
+    border-radius: 30px;
+    background: #F7F8FA;
+}
+
+.top-section {
+    height: 40px;
+    padding-top: 11px;
+}
+
+.top-section .top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0rem 1rem;
+}
+
+.top-content .top-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+/* profile */
+.user {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.profile {
+    width: 42px;
+    height: 42px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.14));
+    margin-right: 1rem;
+}
+
+.profile img {
+    justify-self: flex-end;
+}
+
+/*   Today section styling  */
+
+.today,
+.tommorow {
+    margin-top: 1rem;
+}
+
+.today .content,
+.tommorow .content {
+    padding: 0rem 1rem;
+}
+
+.today .title,
+.tommorow .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.today .title h1,
+.tommorow .title h1 {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.374px;
+    font-feature-settings: "ss07" on, "cv07" on;
+    color: #000000;
+}
+
+.today .title p,
+.tommorow .title p {
+    font-family: "SF Pro Text";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #3478f6;
+}
+
+/*   today tasks styling   */
+
+.today-tasks,
+.tommorow-tasks {
+    margin-top: 2rem;
+    padding-left: 10px;
+}
+
+.today-tasks .tasks,
+.tommorow-tasks .tasks {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 18px;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.today-tasks .tasks h4,
+.tommorow-tasks .tasks h4 {
+    font-family: "SF Pro Text";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.24px;
+    color: #737373;
+}
+
+.today-tasks .tasks p,
+.tommorow-tasks .tasks p {
+    font-family: "SF Pro Text";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.08px;
+    color: #a3a3a3;
+}
+.today-tasks h1, .tommorow-tasks h1 {
+    display: block;
+    color: #737373;
+    font-size: 18px;
+}
+
+/* .tasks .checkbox {
+  
+} */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e8e8e8"
+}
+.today-tasks input[type=checkbox]:checked {
+    accent-color: #000000;
+}
+
+.task-done {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+.today-tasks .task,
+.tommorow-tasks .task {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tommorow-tasks .bullet {
+    width: 10px;
+    height: 10px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.04));
+    background: #000000;
+    border-radius: 100%;
+}
+
+/* add task button */
+
+.add-task {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+}
+
+.add-task .add {
+    width: 42px;
+    height: 42px;
+    background: #000000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.14);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-task .add h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.hide {
+    display: block;
+}
+.last-div {
+    width: 375px;
+    position: absolute;
+    bottom: 1rem;
+}
+.last-div .bar {
+    width: 133px;
+    height: 5px;
+    background: #000000;
+    border-radius: 180px;
+    margin: auto;
+}
+
+/*   Add page styling  */
+.addpage {
+    background: rgba(249, 249, 249, 0.94);
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    display: none;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(249, 249, 249, 0.94);
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.top-header .close-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.top-header .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#input-el {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.301);
+    background: transparent;
+    width: 80%;
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.8937px;
+    line-height: 17px;
+    letter-spacing: -0.309449px;
+    color: rgba(60, 60, 67, 0.3);
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+}
+.top-header .title h2 {
+    margin-right: 3rem;
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.408px;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.top-header p {
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.408px;
+    color: #007AFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.addtaskpage {
+    margin-top: 37px;
+    padding: 0px 30px;
+}
+
+.addtaskpage .name {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.addtaskpage h1 {
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.374px;
+    font-feature-settings: 'ss07' on, 'cv07' on;
+    color: #000000;
+    padding: 33px;
+}
+.addtaskpage .time {
+    padding-bottom: 30px;
+}
+.addtaskpage .time input {
+    height: 38px;
+    padding: 18px;
+    border-radius: 10px;
+    background: rgba(118, 118, 128, 0.12);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+}
+.addtaskpage label {
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.38px;
+    color: #000000;
+}
+.today-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/*   toggle switch   */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 51px;
+    height: 31px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #21f32d;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #21f32d;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*   Done Button   */
+.done-btn {
+    height: 46px;
+    background: #171717;
+    border-radius: 11.5812px;
+    margin: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.done-btn h1 {
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14.0628px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.337508px;
+    color: #FFFFFF;
+}
+.last-section {
+    padding: 15px 30px;
+}
+.last-section p {    
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.078px;
+    color: rgba(60, 60, 67, 0.6);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

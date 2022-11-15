@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList App</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+    <link
+      href="//db.onlinewebfonts.com/c/1c45e28f8e86cc89876f003b953cc3e9?family=SF+Pro+Text"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="top-section">
+        <div class="top-content">
+          <p>9:41</p>
+          <div class="top-right">
+            <img src="./img/Cellular Connection.svg" alt="" />
+            <svg
+              width="15"
+              height="11"
+              viewBox="0 0 15 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.5027 2.768C9.51786 2.76809 11.456 3.54174 12.9164 4.92906C13.0264 5.03616 13.2022 5.03481 13.3105 4.92603L14.3618 3.86594C14.4166 3.81077 14.4472 3.73603 14.4467 3.65827C14.4463 3.58051 14.4148 3.50613 14.3594 3.4516C10.5261 -0.218894 4.4787 -0.218894 0.645443 3.4516C0.589916 3.50609 0.55841 3.58045 0.557898 3.65821C0.557386 3.73597 0.58791 3.81073 0.642715 3.86594L1.6943 4.92603C1.80254 5.03497 1.97846 5.03633 2.08837 4.92906C3.54903 3.54165 5.48735 2.768 7.5027 2.768ZM7.50229 6.21638C8.60948 6.21631 9.67717 6.6275 10.4979 7.37005C10.6089 7.47543 10.7838 7.47315 10.892 7.3649L11.942 6.30482C11.9973 6.24921 12.028 6.17378 12.0272 6.0954C12.0264 6.01701 11.9942 5.94222 11.9378 5.88775C9.43854 3.56492 5.56815 3.56492 3.06891 5.88775C3.01246 5.94222 2.98025 6.01705 2.9795 6.09546C2.97876 6.17387 3.00955 6.24929 3.06497 6.30482L4.11473 7.3649C4.22294 7.47315 4.3978 7.47543 4.50881 7.37005C5.32898 6.62799 6.39582 6.21683 7.50229 6.21638ZM9.60592 8.53713C9.60753 8.61573 9.5766 8.69151 9.52044 8.74658L7.70405 10.5781C7.6508 10.6319 7.57821 10.6622 7.50246 10.6622C7.42671 10.6622 7.35412 10.6319 7.30087 10.5781L5.48418 8.74658C5.42805 8.69147 5.39718 8.61567 5.39885 8.53706C5.40051 8.45846 5.43456 8.38402 5.49297 8.33133C6.65298 7.35102 8.35194 7.35102 9.51195 8.33133C9.57032 8.38407 9.60432 8.45852 9.60592 8.53713Z"
+                fill="black"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="11"
+              viewBox="0 0 24 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                opacity="0.35"
+                x="1.42885"
+                y="1.15364"
+                width="19.0217"
+                height="9.3599"
+                rx="1.96256"
+                stroke="black"
+                stroke-width="0.905797"
+              />
+              <path
+                opacity="0.4"
+                d="M21.8091 4.02184V7.64502C22.5381 7.33816 23.0121 6.62431 23.0121 5.83343C23.0121 5.04255 22.5381 4.3287 21.8091 4.02184Z"
+                fill="black"
+              />
+              <rect
+                x="2.78738"
+                y="2.51189"
+                width="16.3043"
+                height="6.64251"
+                rx="1.20773"
+                fill="black"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- profile -->
+        <div class="user">
+          <div class="profile">
+            <img src="./img/unsplash_yMSecCHsIBc.png" alt="" />
+          </div>
+        </div>
+
+        <!--   today section starts   -->
+        <div class="today">
+          <div class="content">
+            <div class="title">
+              <h1>Today</h1>
+              <div class="hide" onclick="completedTaskHide()">
+                <p>Hide completed</p>
+              </div>
+            </div>
+
+            <!-- today tasks   -->
+
+            <div class="today-tasks">
+              <h1 id="no-today-task">NO TASK HERE</h1>
+            </div>
+          </div>
+        </div>
+
+        <!--   Tommorow tasks   -->
+
+        <div class="tommorow">
+          <div class="content">
+            <div class="title">
+              <h1>Tommorow</h1>
+            </div>
+            <div class="tommorow-tasks">
+              <h1 id="no-tommorow-task">NO TASK HERE</h1>
+            </div>
+          </div>
+        </div>
+        <div class="add-task">
+          <div class="add" onclick="openAddPage()">
+            <h1>+</h1>
+          </div>
+        </div>
+      </div>
+
+      <!--   Add task page  -->
+
+      <div class="addpage" id="add-page">
+        <div class="top-header">
+          <div class="close-btn" onclick="closeAddPage()">
+            <img src="./img/chevron.left.png" alt="icon" />
+            <p>Close</p>
+          </div>
+          <div class="title">
+            <h2>Task</h2>
+          </div>
+        </div>
+        <div class="addtaskpage">
+          <h1>Add a task</h1>
+          <div class="name">
+            <label for="name">Name</label>
+            <input id="input-el" type="text" placeholder="Add Task here" />
+          </div>
+          <div class="time">
+            <label for="hour">Hour</label>
+            <input type="time" id="time-el" />
+          </div>
+          <div class="today-btn">
+            <label for="">Today</label>
+            <label class="switch">
+              <input type="checkbox" id="checkbox-switch" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="done-btn" onclick="addNewTask()">
+          <h1>Done</h1>
+        </div>
+        <div class="last-section">
+          <p>If you disable today, the task will be considered as tomorrow</p>
+        </div>
+      </div>
+      <div class="last-div">
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <!--  script   -->
+
+    <script>
+      let addPage = document.getElementById("add-page");
+      let inputEl = document.getElementById("input-el");
+      let newEl = document.getElementById("new-task");
+      let timeEl = document.getElementById("time-el");
+      let todayTasks = document.querySelector(".today-tasks");
+      let tommorowTasks = document.querySelector(".tommorow-tasks");
+
+      console.log(inputEl);
+      // let newTask = inputEl.value;
+
+      function openAddPage() {
+        addPage.style.display = "block";
+      }
+
+      function closeAddPage() {
+        addPage.style.display = "none";
+      }
+
+      // add task to home page
+      var CheckButton = document.getElementById("checkbox-switch");
+      //   check whether the today button is checked or not
+      CheckButton.addEventListener(
+        "click",
+        function (ev) {
+          if (ev.target) {
+            ev.target.classList.toggle("checked");
+          }
+        },
+        false
+      );
+
+      function addNewTask() {
+        let newTask = inputEl.value;
+        let newTime = timeEl.value;
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("tasks");
+        const taskDiv = document.createElement("div");
+        taskDiv.classList.add("task");
+        const taskName = document.createElement("h4");
+        const taskTime = document.createElement("p");
+        taskName.innerHTML = newTask;
+        taskTime.innerHTML = newTime;
+
+        // check if task is for today or tommorow
+
+        if (CheckButton.classList.contains("checked")) {
+          //   appending new elements when user enter a new task to today section
+          var todayCheckbox = document.createElement("div");
+          todayCheckbox.classList.add("checkbox");
+          var checkBoxInput = document.createElement("INPUT");
+          checkBoxInput.setAttribute("type", "checkbox");
+
+          todayTasks.appendChild(newDiv);
+          newDiv.appendChild(todayCheckbox);
+          todayCheckbox.appendChild(checkBoxInput);
+          newDiv.appendChild(taskDiv);
+          taskDiv.appendChild(taskName);
+          taskDiv.appendChild(taskTime);
+
+          var noTask = document.getElementById("no-today-task");
+          noTask.style.display = "none";
+
+          //   checked the completed tasks
+
+          todayCheckbox.addEventListener(
+            "click",
+            function (ev) {
+              if (ev.target) {
+                ev.target.classList.toggle("checked");
+                taskDiv.classList.toggle("task-done");
+                newDiv.classList.toggle("completed-task");
+              }
+            },
+            false
+          );
+        } else {
+          //   appending new elements when user enter a new task to tommorow section
+          const bullet = document.createElement("div");
+          bullet.classList.add("bullet");
+
+          tommorowTasks.appendChild(newDiv);
+          newDiv.appendChild(bullet);
+          newDiv.appendChild(taskDiv);
+          taskDiv.appendChild(taskName);
+          taskDiv.appendChild(taskTime);
+
+          var noTask = document.getElementById("no-tommorow-task");
+          noTask.style.display = "none";
+        }
+        inputEl.value = "";
+        // close page when done clicked
+        addPage.style.display = "none";
+      }
+
+      //   Hide completed tasks
+      function completedTaskHide() {
+        var taskEnds = todayTasks.querySelectorAll(".completed-task");
+        for (const taskEnd of taskEnds) {
+          taskEnd.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
