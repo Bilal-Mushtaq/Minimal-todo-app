@@ -131,7 +131,7 @@
           <h1>Add a task</h1>
           <div class="name">
             <label for="name">Name</label>
-            <input id="input-el" type="text" placeholder="Add Task here"/>
+            <input id="input-el" type="text" placeholder="Add Task here" />
           </div>
           <div class="time">
             <label for="hour">Hour</label>
@@ -202,7 +202,10 @@
 
         // check if task is for today or tommorow
 
-        if (CheckButton.classList.contains("checked")) {
+        if (
+          CheckButton.classList.contains("checked") &&
+          taskName.innerHTML != ""
+        ) {
           //   appending new elements when user enter a new task to today section
           var todayCheckbox = document.createElement("div");
           todayCheckbox.classList.add("checkbox");
@@ -232,7 +235,8 @@
             },
             false
           );
-        } else {
+
+        } else if (taskName.innerHTML != "") {
           //   appending new elements when user enter a new task to tommorow section
           const bullet = document.createElement("div");
           bullet.classList.add("bullet");
@@ -248,7 +252,12 @@
         }
         inputEl.value = "";
         // close page when done clicked
-        addPage.style.display = "none";
+        if (taskName.innerHTML === "") {
+          addPage.style.display = "block";
+          alert("please write something");
+        } else {
+          addPage.style.display = "none";
+        }
       }
 
       //   Hide completed tasks
